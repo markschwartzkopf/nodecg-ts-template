@@ -1,0 +1,26 @@
+{
+  "name": "default-nodecg-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ../../index.js --bundlesEnabled default-nodecg-project",
+    "build": "npm-run-all -s build:*",
+    "build:extension": "node ./node_modules/typescript/bin/tsc -p ./src_extension --diagnostics",
+    "build:dashboard": "node ./node_modules/typescript/bin/tsc -p ./src_dashboard --diagnostics",
+    "build:graphics": "node ./node_modules/typescript/bin/tsc -p ./src_graphics --diagnostics",
+    "build:copyhtml": "cpy \"**/*.html\" ../dashboard/ --cwd=src_dashboard --parents && cpy \"**/*.html\" ../graphics/ --cwd=src_graphics",
+    "watch": "npm-run-all -s watch:*",
+    "watch:extension": "node ./node_modules/typescript/bin/tsc -p ./src_extension --diagnostics --watch",
+    "watch:dashboard": "node ./node_modules/typescript/bin/tsc -p ./src_dashboard --diagnostics --watch",
+    "watch:graphics": "node ./node_modules/typescript/bin/tsc -p ./src_graphics --diagnostics --watch",
+    "watch:copyhtml": "onchange -i ./src_dashboard ./src_graphics -- npm run build:copyhtml"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.8",
+    "cpy-cli": "^3.1.1",
+    "npm-run-all": "^4.1.5",
+    "onchange": "^7.1.0",
+    "typescript": "^4.5.4"
+  }
+}
