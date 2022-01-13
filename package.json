@@ -27,7 +27,7 @@
     "build:dashboard": "node ./node_modules/typescript/bin/tsc -p ./src_dashboard --diagnostics",
     "build:graphics": "node ./node_modules/typescript/bin/tsc -p ./src_graphics --diagnostics",
     "build:copyhtml": "cpy \"**/*.html\" ../dashboard/ --cwd=src_dashboard --parents && cpy \"**/*.html\" ../graphics/ --cwd=src_graphics",
-    "watch": "npm-run-all -s watch:*",
+    "watch": "npm-run-all -p watch:*",
     "watch:extension": "node ./node_modules/typescript/bin/tsc -p ./src_extension --diagnostics --watch",
     "watch:dashboard": "node ./node_modules/typescript/bin/tsc -p ./src_dashboard --diagnostics --watch",
     "watch:graphics": "node ./node_modules/typescript/bin/tsc -p ./src_graphics --diagnostics --watch",
