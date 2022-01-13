@@ -2,6 +2,24 @@
   "name": "default-nodecg-project",
   "version": "1.0.0",
   "description": "",
+	"nodecg": {
+    "compatibleRange": "^1.8.1",
+    "dashboardPanels": [
+      {
+        "name": "index",
+        "title": "index",
+        "file": "index.html",
+        "fullbleed": true
+      }
+    ],
+    "graphics": [
+      {
+        "file": "index.html",
+        "width": 1920,
+        "height": 1080
+      }
+    ]
+  },
   "scripts": {
     "start": "node ../../index.js --bundlesEnabled default-nodecg-project",
     "build": "npm-run-all -s build:*",
