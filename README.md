@@ -1,1 +1,0 @@
-NodeCG bundle with Typescript starting point
